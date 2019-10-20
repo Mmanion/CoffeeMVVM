@@ -80,14 +80,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8RP-24-ywt">
-                                <rect key="frame" x="104" y="590" width="206" height="32"/>
-                                <segments>
-                                    <segment title="Small"/>
-                                    <segment title="Medium"/>
-                                    <segment title="Large"/>
-                                </segments>
-                            </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DgG-GV-jIU">
                                 <rect key="frame" x="132" y="684" width="150" height="34"/>
                                 <constraints>
@@ -109,12 +101,10 @@
                         <constraints>
                             <constraint firstItem="InY-38-Oke" firstAttribute="trailing" secondItem="ory-1h-3Bv" secondAttribute="trailing" id="JlA-AE-Gcj"/>
                             <constraint firstItem="ory-1h-3Bv" firstAttribute="bottom" secondItem="Bu6-NQ-X9E" secondAttribute="bottom" constant="79" id="M7o-3a-wKN"/>
-                            <constraint firstItem="8RP-24-ywt" firstAttribute="top" secondItem="InY-38-Oke" secondAttribute="bottom" constant="73" id="VBZ-St-4r2"/>
+                            <constraint firstItem="DgG-GV-jIU" firstAttribute="top" secondItem="InY-38-Oke" secondAttribute="bottom" constant="167" id="bYb-Z4-ki8"/>
                             <constraint firstItem="InY-38-Oke" firstAttribute="centerX" secondItem="ory-1h-3Bv" secondAttribute="centerX" id="cKX-Zn-yzk"/>
                             <constraint firstItem="Bu6-NQ-X9E" firstAttribute="centerX" secondItem="ory-1h-3Bv" secondAttribute="centerX" id="cSK-oV-yDR"/>
-                            <constraint firstItem="8RP-24-ywt" firstAttribute="centerX" secondItem="ory-1h-3Bv" secondAttribute="centerX" id="hsp-FE-mLY"/>
                             <constraint firstItem="InY-38-Oke" firstAttribute="top" secondItem="ory-1h-3Bv" secondAttribute="top" id="nde-KJ-LsZ"/>
-                            <constraint firstItem="DgG-GV-jIU" firstAttribute="top" secondItem="8RP-24-ywt" secondAttribute="bottom" constant="63" id="njx-am-SO2"/>
                             <constraint firstItem="Bu6-NQ-X9E" firstAttribute="top" secondItem="DgG-GV-jIU" secondAttribute="bottom" constant="31" id="oDk-2y-62N"/>
                             <constraint firstItem="DgG-GV-jIU" firstAttribute="centerX" secondItem="ory-1h-3Bv" secondAttribute="centerX" id="veJ-sf-Qs8"/>
                             <constraint firstItem="InY-38-Oke" firstAttribute="leading" secondItem="ory-1h-3Bv" secondAttribute="leading" id="y5u-Q6-HeZ"/>
@@ -122,10 +112,20 @@
                         <viewLayoutGuide key="safeArea" id="ory-1h-3Bv"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Order" id="1sq-dS-H93">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="0FK-bo-qhs"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="6jZ-q7-uRj"/>
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="0FK-bo-qhs">
+                            <connections>
+                                <action selector="close" destination="KiZ-Zv-mSG" id="5f4-d3-Jkj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="6jZ-q7-uRj">
+                            <connections>
+                                <action selector="save" destination="KiZ-Zv-mSG" id="KHa-E6-5Pz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emailTextField" destination="Bu6-NQ-X9E" id="l6E-IZ-bNQ"/>
+                        <outlet property="nameTextField" destination="DgG-GV-jIU" id="r4n-Tf-CBa"/>
                         <outlet property="tableView" destination="InY-38-Oke" id="1XJ-53-dRN"/>
                     </connections>
                 </viewController>
